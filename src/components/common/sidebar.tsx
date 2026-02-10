@@ -33,7 +33,7 @@ const MANAGEMENT_ITEMS = [
   { name: "Orders", icon: ShoppingCart, href: "/management/orders" },
   { name: "Customers", icon: Users, href: "/management/customers" },
   { name: "Menu / Products", icon: UtensilsCrossed, href: "/management/products" },
-  { name: "Promotions", icon: Tag, href: "/management/gyms" },
+  { name: "Promotions", icon: Tag, href: "/management/promotions" },
   { name: "Branch Management", icon: Building2, href: "/management/newsfeed" },
   { name: "Reports & Analytics", icon: BarChart3, href: "/management/subscriptions" },
 ];

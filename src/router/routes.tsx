@@ -8,23 +8,15 @@ import AuthLayout from "@/layout/auth-layout";
 const Dashboard = lazy(() => import("@/app/dashboard/Dashboard"));
 const Profile = lazy(() => import("@/app/settings/profile/Profile"));
 const Privacy = lazy(() => import("@/app/settings/privacy/Privacy"));
-const Disclaimers = lazy(() => import("@/app/settings/disclimers/Disclimers"));
 const Terms = lazy(() => import("@/app/settings/terms/Terms"));
 const About = lazy(() => import("@/app/settings/about-us/About"));
 const FAQ = lazy(() => import("@/app/settings/faq/Faq"));
 const Admins = lazy(() => import("@/app/management/admins/Admins"));
+const Orders = lazy(() => import("@/app/management/orders/Orders"));
 const Customers = lazy(() => import("@/app/management/customers/Customers"));
 const Products = lazy(() => import("@/app/management/products/Products"));
-const Trainers = lazy(() => import("@/app/management/trainers/Trainers"));
-const Programs = lazy(() => import("@/app/management/programs/Programs"));
-const Gyms = lazy(() => import("@/app/management/gyms/Gyms"));
-const Newsfeed = lazy(() => import("@/app/management/newsfeed/Newsfeed"));
+const Promotions = lazy(() => import("@/app/management/promotions/Promotions"));
 const Notifications = lazy(() => import("@/app/notifications/Notifications"));
-const Subscriptions = lazy(() => import("@/app/management/subscriptions/Subscriptions"));
-const Fees = lazy(() => import("@/app/management/fees/Fees"));
-const Tickets = lazy(() => import("@/app/management/tickets/Tickets"));
-const Reviews = lazy(() => import("@/app/management/reviews/Reviews"));
-const Orders = lazy(() => import("@/app/management/orders/Orders"));
 
 // Auth
 const Login = lazy(() => import("@/app/auth/Login"));
@@ -42,24 +34,16 @@ export const router = createBrowserRouter([
             { index: true, element: <Dashboard /> },
 
             // Management
-            { path: "management/admins", element: <Admins /> },
+            { path: "management/orders", element: <Orders /> },
             { path: "management/customers", element: <Customers /> },
             { path: "management/products", element: <Products /> },
-            { path: "management/trainers", element: <Trainers /> },
-            { path: "management/programs", element: <Programs /> },
-            { path: "management/gyms", element: <Gyms /> },
-            { path: "management/newsfeed", element: <Newsfeed /> },
-            { path: "management/subscriptions", element: <Subscriptions /> },
-            { path: "management/fees", element: <Fees /> },
-            { path: "management/tickets", element: <Tickets /> },
-            { path: "management/reviews", element: <Reviews /> },
-            { path: "management/orders", element: <Orders /> },
+            { path: "management/promotions", element: <Promotions /> },
+            { path: "management/admins", element: <Admins /> },
             { path: "notifications", element: <Notifications /> },
             // Settings
             { path: "settings/profile", element: <Profile /> },
             { path: "settings/about", element: <About /> },
             { path: "settings/terms", element: <Terms /> },
-            { path: "settings/disclaimers", element: <Disclaimers /> },
             { path: "settings/privacy", element: <Privacy /> },
             { path: "settings/faq", element: <FAQ /> },
         ]
