@@ -72,9 +72,9 @@ export const productsColumns: ColumnDef<Product>[] = [
   },
   {
     id: "actions",
-    header: "VIEW",
+    header: () => <div className="text-right mr-5">VIEW</div>,
     cell: ({ row }) => (
-      <div className="flex justify-start">
+      <div className="flex justify-end">
         <ProductViewModal product={row.original} />
       </div>
     ),

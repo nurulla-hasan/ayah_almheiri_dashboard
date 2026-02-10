@@ -20,10 +20,11 @@ export const ProductViewModal = ({ product }: ProductViewModalProps) => {
       title="Product Details"
       actionTrigger={
         <Button variant="ghost" size="sm" className="bg-primary/10 text-primary hover:text-primary hover:bg-primary/20">
-          <Eye className="h-4 w-4 mr-2" />
+          <Eye/>
           View
         </Button>
       }
+      showClose={true}
     >
       <ScrollArea className="max-h-[80vh]">
         <div className="p-6 space-y-6">
