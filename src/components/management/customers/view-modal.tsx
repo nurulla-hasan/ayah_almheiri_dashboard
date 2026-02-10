@@ -31,8 +31,9 @@ const CustomerViewModal = ({ customer }: CustomerViewModalProps) => {
           View
         </Button>
       }
+      showClose={true}
     >
-      <ScrollArea className="max-h-[70vh]">
+      <ScrollArea className="max-h-[60vh]">
         <div className="p-6 space-y-6">
           {/* Header Info - Clean Shadcn style */}
           <div className="flex items-center gap-4 p-4 rounded-xl border bg-muted/30">

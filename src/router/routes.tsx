@@ -14,6 +14,7 @@ const About = lazy(() => import("@/app/settings/about-us/About"));
 const FAQ = lazy(() => import("@/app/settings/faq/Faq"));
 const Admins = lazy(() => import("@/app/management/admins/Admins"));
 const Customers = lazy(() => import("@/app/management/customers/Customers"));
+const Products = lazy(() => import("@/app/management/products/Products"));
 const Trainers = lazy(() => import("@/app/management/trainers/Trainers"));
 const Programs = lazy(() => import("@/app/management/programs/Programs"));
 const Gyms = lazy(() => import("@/app/management/gyms/Gyms"));
@@ -24,6 +25,8 @@ const Fees = lazy(() => import("@/app/management/fees/Fees"));
 const Tickets = lazy(() => import("@/app/management/tickets/Tickets"));
 const Reviews = lazy(() => import("@/app/management/reviews/Reviews"));
 const Orders = lazy(() => import("@/app/management/orders/Orders"));
+
+// Auth
 const Login = lazy(() => import("@/app/auth/Login"));
 const ForgotPassword = lazy(() => import("@/app/auth/ForgotPassword"));
 const ResetPassword = lazy(() => import("@/app/auth/ResetPassword"));
@@ -41,6 +44,7 @@ export const router = createBrowserRouter([
             // Management
             { path: "management/admins", element: <Admins /> },
             { path: "management/customers", element: <Customers /> },
+            { path: "management/products", element: <Products /> },
             { path: "management/trainers", element: <Trainers /> },
             { path: "management/programs", element: <Programs /> },
             { path: "management/gyms", element: <Gyms /> },
