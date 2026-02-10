@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Eye, Mail, Phone, Award, Calendar, User } from "lucide-react";
+import { Eye, Mail, Phone, Calendar, User } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ModalWrapper } from "@/components/ui/custom/modal-wrapper";
 import { Badge } from "@/components/ui/badge";
 import { type Customer } from "./customers-columns";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface CustomerViewModalProps {
   customer: Customer;
@@ -13,109 +14,152 @@ interface CustomerViewModalProps {
 const CustomerViewModal = ({ customer }: CustomerViewModalProps) => {
   const [open, setOpen] = useState(false);
 
+  const recentOrders = [
+    { id: "ORD-1234", item: "Hot Coffee", price: "24.50AED" },
+    { id: "ORD-1198", item: "Cold Coffee", price: "32.00AED" },
+    { id: "ORD-1145", item: "Hot & Cold Drink", price: "28.00AED" },
+  ];
+
   return (
     <ModalWrapper
       open={open}
       onOpenChange={setOpen}
       title="Customer Details"
-      description="Detailed information about the customer"
       actionTrigger={
-        <Button
-          variant="outline"
-          size="sm"
-          className="text-blue-600 border-blue-200 hover:bg-blue-50 hover:text-blue-700"
-        >
-          <Eye/>
+        <Button variant="outline" size="sm">
+          <Eye className="h-4 w-4 mr-2" />
           View
         </Button>
       }
-      showClose={true}
     >
-      <div className="p-6 space-y-6">
-        {/* Header Info */}
-        <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/30 border border-muted-foreground/10">
-          <Avatar className="h-16 w-16 text-xl bg-blue-100 text-blue-600 border-2 border-white shadow-sm">
-            <AvatarFallback>{customer.initials}</AvatarFallback>
-          </Avatar>
-          <div className="flex flex-col gap-1">
-            <h4 className="text-xl font-bold text-foreground leading-tight">{customer.name}</h4>
-            <p className="text-sm text-muted-foreground">ID: #{customer.id}</p>
-            <div className="flex mt-1">
-              <Badge variant="secondary" className="bg-green-100 text-green-700 hover:bg-green-100 border-none">
-                Active Member
+      <ScrollArea className="max-h-[70vh]">
+        <div className="p-6 space-y-6">
+          {/* Header Info - Clean Shadcn style */}
+          <div className="flex items-center gap-4 p-4 rounded-xl border bg-muted/30">
+            <Avatar className="h-16 w-16 border-2 border-background shadow-sm">
+              <AvatarFallback className="bg-primary/10 text-primary font-bold text-xl">
+                {customer.initials}
+              </AvatarFallback>
+            </Avatar>
+            <div className="flex flex-col gap-1">
+              <h4 className="text-xl font-bold text-foreground leading-tight">
+                {customer.name}
+              </h4>
+              <p className="text-sm text-muted-foreground">{customer.email}</p>
+              <div className="flex mt-1">
+                <Badge variant="secondary" className="font-medium">
+                  Active Member
+                </Badge>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats Grid - Using Shadcn/Card style containers */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 rounded-xl border bg-card shadow-sm flex flex-col gap-1">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                Total Orders
+              </p>
+              <p className="text-2xl font-black text-foreground">
+                {customer.totalOrders}
+              </p>
+            </div>
+            <div className="p-4 rounded-xl border bg-card shadow-sm flex flex-col gap-1">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                Total Spent
+              </p>
+              <p className="text-2xl font-black text-primary">
+                {customer.totalSpent}
+              </p>
+            </div>
+            <div className="p-4 rounded-xl border bg-card shadow-sm flex flex-col gap-1">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                Loyalty Stamps
+              </p>
+              <p className="text-2xl font-black text-orange-600">
+                {customer.loyaltyStamps}/{customer.maxStamps}
+              </p>
+            </div>
+            <div className="p-4 rounded-xl border bg-card shadow-sm flex flex-col gap-1">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                Member Since
+              </p>
+              <p className="text-2xl font-black text-foreground">
+                {customer.joinDate}
+              </p>
+            </div>
+          </div>
+
+          {/* Contact Details - Extra Items */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 rounded-xl border bg-muted/10 space-y-3">
+              <h5 className="text-xs font-bold text-muted-foreground uppercase tracking-widest">
+                Contact Information
+              </h5>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-sm text-foreground/80">
+                  <Mail className="h-4 w-4 text-muted-foreground" />
+                  <span>{customer.email}</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-foreground/80">
+                  <Phone className="h-4 w-4 text-muted-foreground" />
+                  <span>{customer.phone}</span>
+                </div>
+              </div>
+            </div>
+            <div className="p-4 rounded-xl border bg-muted/10 space-y-3">
+              <h5 className="text-xs font-bold text-muted-foreground uppercase tracking-widest">
+                Account Info
+              </h5>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-sm text-foreground/80">
+                  <Calendar className="h-4 w-4 text-muted-foreground" />
+                  <span>Joined: {customer.joinDate}</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-foreground/80">
+                  <User className="h-4 w-4 text-muted-foreground" />
+                  <span>ID: #{customer.id}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Recent Order History */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h5 className="text-sm font-bold text-foreground uppercase tracking-wider">
+                Recent Order History
+              </h5>
+              <Badge
+                variant="outline"
+                className="text-[10px] uppercase font-bold"
+              >
+                Last 3 Orders
               </Badge>
             </div>
-          </div>
-        </div>
-
-        {/* Contact & Date Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="flex flex-col gap-3 p-4 rounded-xl border border-muted-foreground/10 bg-background/50">
-            <h5 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Contact Details</h5>
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2 text-sm">
-                <Mail className="h-4 w-4 text-muted-foreground" />
-                <span>{customer.email}</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm">
-                <Phone className="h-4 w-4 text-muted-foreground" />
-                <span>{customer.phone}</span>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col gap-3 p-4 rounded-xl border border-muted-foreground/10 bg-background/50">
-            <h5 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Registration</h5>
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2 text-sm">
-                <Calendar className="h-4 w-4 text-muted-foreground" />
-                <span>Joined on {customer.joinDate}</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm">
-                <User className="h-4 w-4 text-muted-foreground" />
-                <span>Individual Account</span>
-              </div>
+            <div className="space-y-2">
+              {recentOrders.map((order) => (
+                <div
+                  key={order.id}
+                  className="flex items-center justify-between p-4 rounded-xl border bg-card hover:bg-muted/30 transition-colors shadow-sm"
+                >
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-sm font-bold text-foreground">
+                      Order #{order.id}
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      {order.item}
+                    </span>
+                  </div>
+                  <span className="text-sm font-black text-primary">
+                    {order.price}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-
-        {/* Stats Section */}
-        <div className="grid grid-cols-3 gap-4">
-          <div className="p-4 rounded-xl bg-blue-50/50 border border-blue-100 flex flex-col items-center">
-            <p className="text-xs font-medium text-blue-600 uppercase">Orders</p>
-            <p className="text-2xl font-black text-blue-700 mt-1">{customer.totalOrders}</p>
-          </div>
-          <div className="p-4 rounded-xl bg-green-50/50 border border-green-100 flex flex-col items-center">
-            <p className="text-xs font-medium text-green-600 uppercase">Spent</p>
-            <p className="text-2xl font-black text-green-700 mt-1">{customer.totalSpent}</p>
-          </div>
-          <div className="p-4 rounded-xl bg-orange-50/50 border border-orange-100 flex flex-col items-center">
-            <p className="text-xs font-medium text-orange-600 uppercase">Stamps</p>
-            <p className="text-2xl font-black text-orange-700 mt-1">{customer.loyaltyStamps}</p>
-          </div>
-        </div>
-
-        {/* Loyalty Progress */}
-        <div className="p-4 rounded-xl border border-blue-100 bg-blue-50/30 flex flex-col">
-          <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center gap-2 text-sm font-bold text-blue-700">
-              <Award className="h-4 w-4" />
-              Loyalty Progress
-            </div>
-            <span className="text-sm font-bold text-blue-700">
-              {customer.loyaltyStamps}/{customer.maxStamps} Stamps
-            </span>
-          </div>
-          <div className="h-2 w-full bg-blue-100 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-blue-600 transition-all duration-500" 
-              style={{ width: `${(customer.loyaltyStamps / customer.maxStamps) * 100}%` }}
-            />
-          </div>
-          <p className="text-[10px] text-blue-600/70 mt-2 text-center font-medium italic">
-            {customer.maxStamps - customer.loyaltyStamps} more stamps to reach the next reward level!
-          </p>
-        </div>
-      </div>
+      </ScrollArea>
     </ModalWrapper>
   );
 };
