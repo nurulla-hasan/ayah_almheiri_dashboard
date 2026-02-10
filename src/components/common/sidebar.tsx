@@ -21,6 +21,7 @@ import {
   Tag,
   Building2,
   BarChart3,
+  ShieldCheck,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
@@ -36,6 +37,7 @@ const MANAGEMENT_ITEMS = [
   { name: "Promotions", icon: Tag, href: "/management/promotions" },
   { name: "Branch Management", icon: Building2, href: "/management/branches" },
   { name: "Reports & Analytics", icon: BarChart3, href: "/management/reports" },
+  { name: "Admin Management", icon: ShieldCheck, href: "/management/admins" },
 ];
 
 const SETTINGS_SUB_ITEMS = [
