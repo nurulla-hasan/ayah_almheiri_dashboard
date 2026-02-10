@@ -12,16 +12,16 @@ import {
   UserRoundPen,
   BadgeInfo,
   ReceiptText,
-  GlobeLock,
   ListOrdered,
   Users,
   Layers,
-  Dumbbell,
-  BadgeCheck,
-  Newspaper,
-  Wallet,
   MessageCircleQuestion,
   LayoutGrid,
+  ShoppingCart,
+  UtensilsCrossed,
+  Tag,
+  Building2,
+  BarChart3,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
@@ -31,13 +31,13 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "../ui/button";
 
 const MANAGEMENT_ITEMS = [
-  { name: "Orders", icon: Users, href: "/management/users" },
-  { name: "Customers", icon: GlobeLock, href: "/management/admins" },
-  { name: "Menu / Products", icon: BadgeCheck, href: "/management/trainers" },
+  { name: "Orders", icon: ShoppingCart, href: "/orders" },
+  { name: "Customers", icon: Users, href: "/management/users" },
+  { name: "Menu / Products", icon: UtensilsCrossed, href: "/management/trainers" },
   { name: "Program Management", icon: Layers, href: "/management/programs" },
-  { name: "Promotions", icon: Dumbbell, href: "/management/gyms" },
-  { name: "Branch Management", icon: Newspaper, href: "/management/newsfeed" },
-  { name: "Reports & Analytics", icon: Wallet, href: "/management/subscriptions" },
+  { name: "Promotions", icon: Tag, href: "/management/gyms" },
+  { name: "Branch Management", icon: Building2, href: "/management/newsfeed" },
+  { name: "Reports & Analytics", icon: BarChart3, href: "/management/subscriptions" },
 ];
 
 const SETTINGS_SUB_ITEMS = [

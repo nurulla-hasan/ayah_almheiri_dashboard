@@ -22,6 +22,9 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
+        success: "bg-emerald-500 text-white hover:bg-emerald-600",
+        warning: "bg-amber-500 text-white hover:bg-amber-600",
+        purple: "bg-purple-600 text-white hover:bg-purple-700",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -72,4 +75,5 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = "Button"
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { Button, buttonVariants }

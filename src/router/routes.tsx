@@ -12,7 +12,6 @@ const Disclaimers = lazy(() => import("@/app/settings/disclimers/Disclimers"));
 const Terms = lazy(() => import("@/app/settings/terms/Terms"));
 const About = lazy(() => import("@/app/settings/about-us/About"));
 const FAQ = lazy(() => import("@/app/settings/faq/Faq"));
-const Users = lazy(() => import("@/app/management/users/Users"));
 const Admins = lazy(() => import("@/app/management/admins/Admins"));
 const Trainers = lazy(() => import("@/app/management/trainers/Trainers"));
 const Programs = lazy(() => import("@/app/management/programs/Programs"));
@@ -23,6 +22,7 @@ const Subscriptions = lazy(() => import("@/app/management/subscriptions/Subscrip
 const Fees = lazy(() => import("@/app/management/fees/Fees"));
 const Tickets = lazy(() => import("@/app/management/tickets/Tickets"));
 const Reviews = lazy(() => import("@/app/management/reviews/Reviews"));
+const Orders = lazy(() => import("@/app/orders/Orders"));
 const Login = lazy(() => import("@/app/auth/Login"));
 const ForgotPassword = lazy(() => import("@/app/auth/ForgotPassword"));
 const ResetPassword = lazy(() => import("@/app/auth/ResetPassword"));
@@ -38,7 +38,6 @@ export const router = createBrowserRouter([
             { index: true, element: <Dashboard /> },
 
             // Management
-            { path: "management/users", element: <Users /> },
             { path: "management/admins", element: <Admins /> },
             { path: "management/trainers", element: <Trainers /> },
             { path: "management/programs", element: <Programs /> },
@@ -48,6 +47,7 @@ export const router = createBrowserRouter([
             { path: "management/fees", element: <Fees /> },
             { path: "management/tickets", element: <Tickets /> },
             { path: "management/reviews", element: <Reviews /> },
+            { path: "orders", element: <Orders /> },
             { path: "notifications", element: <Notifications /> },
             // Settings
             { path: "settings/profile", element: <Profile /> },

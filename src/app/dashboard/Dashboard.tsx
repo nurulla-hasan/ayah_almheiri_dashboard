@@ -3,15 +3,15 @@ import Stats from "@/components/dashboard/stats";
 import WeeklyRevenueChart from "@/components/dashboard/weekly-revenue";
 import OrderStatusChart from "@/components/dashboard/order-status";
 import { DataTable } from "@/components/ui/custom/data-table";
-import { usersColumns, type User } from "@/components/management/users/users-columns";
+import { ordersColumns, type Order } from "@/components/management/orders/orders-columns";
 
 const Dashboard = () => {
   return (
     <PageLayout >
       <div className="space-y-6">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Dashboard Overview</h1>
-          <p className="text-sm text-slate-500">Welcome back! Here's what's happening today.</p>
+          <h1 className="text-2xl font-bold">Dashboard Overview</h1>
+          <p className="text-sm text-muted-foreground">Welcome back! Here's what's happening today.</p>
         </div>
 
         <Stats />
@@ -24,7 +24,11 @@ const Dashboard = () => {
             <OrderStatusChart />
           </div>
         </div>
-         <DataTable columns={usersColumns} data={users} />
+        
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold">Recent Orders</h2>
+          <DataTable columns={ordersColumns} data={recentOrders} />
+        </div>
       </div>
     </PageLayout>
   );
@@ -32,47 +36,60 @@ const Dashboard = () => {
 
 export default Dashboard;
 
-
-
-const users: User[] = [
+const recentOrders: Order[] = [
   {
-    id: 1,
-    name: "John Doe",
-    email: "john.doe@example.com",
-    role: "Trainer",
-    joinedDate: "12 Jan 2025",
-    status: "Approved",
+    id: "1",
+    orderNumber: "#ORD-1234",
+    timeAgo: "2 mins ago",
+    customerName: "John Smith",
+    deliveryType: "Car Pickup",
+    deliveryDetails: "ABC-123",
+    items: ["Burger Combo", "Fries", "Coke"],
+    totalAmount: "24.50AED",
+    status: "Preparing",
   },
   {
-    id: 2,
-    name: "Jane Smith",
-    email: "jane.smith@example.com",
-    role: "Individual",
-    joinedDate: "12 Jan 2025",
-    status: "Decline",
+    id: "2",
+    orderNumber: "#ORD-1235",
+    timeAgo: "5 mins ago",
+    customerName: "Sarah Johnson",
+    deliveryType: "Counter Pickup",
+    deliveryDetails: "",
+    items: ["Pizza Large", "Coke"],
+    totalAmount: "32.00AED",
+    status: "Ready",
   },
   {
-    id: 3,
-    name: "Michael Johnson",
-    email: "michael.johnson@example.com",
-    role: "Trainer",
-    joinedDate: "12 Jan 2025",
-    status: "Decline",
+    id: "3",
+    orderNumber: "#ORD-1236",
+    timeAgo: "1 min ago",
+    customerName: "Mike Williams",
+    deliveryType: "Car Pickup",
+    deliveryDetails: "XYZ-789",
+    items: ["Salad Bowl"],
+    totalAmount: "12.50AED",
+    status: "Pending",
   },
   {
-    id: 4,
-    name: "Emily Brown",
-    email: "emily.brown@example.com",
-    role: "Individual",
-    joinedDate: "12 Jan 2025",
-    status: "Approved",
+    id: "4",
+    orderNumber: "#ORD-1237",
+    timeAgo: "8 mins ago",
+    customerName: "Emma Davis",
+    deliveryType: "Counter Pickup",
+    deliveryDetails: "",
+    items: ["Pasta", "Garlic Bread"],
+    totalAmount: "28.00AED",
+    status: "Preparing",
   },
   {
-    id: 5,
-    name: "David Wilson",
-    email: "david.wilson@example.com",
-    role: "Individual",
-    joinedDate: "12 Jan 2025",
-    status: "Approved",
+    id: "5",
+    orderNumber: "#ORD-1238",
+    timeAgo: "15 mins ago",
+    customerName: "David Brown",
+    deliveryType: "Car Pickup",
+    deliveryDetails: "DEF-456",
+    items: ["Steak Dinner", "Wine"],
+    totalAmount: "45.00AED",
+    status: "Completed",
   },
 ];
