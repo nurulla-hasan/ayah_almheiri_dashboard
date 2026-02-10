@@ -31,8 +31,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "../ui/button";
 
 const MANAGEMENT_ITEMS = [
-  { name: "Orders", icon: ShoppingCart, href: "/orders" },
-  { name: "Customers", icon: Users, href: "/management/users" },
+  { name: "Orders", icon: ShoppingCart, href: "/management/orders" },
+  { name: "Customers", icon: Users, href: "/management/customers" },
   { name: "Menu / Products", icon: UtensilsCrossed, href: "/management/trainers" },
   { name: "Program Management", icon: Layers, href: "/management/programs" },
   { name: "Promotions", icon: Tag, href: "/management/gyms" },
