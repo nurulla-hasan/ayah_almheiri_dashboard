@@ -89,7 +89,7 @@ const Notifications = () => {
                 !notification.isRead ? "bg-primary/5 ring-1 ring-primary/10" : "bg-background/50"
               )}
             >
-              <CardContent className="p-4 flex gap-4">
+              <CardContent className="flex gap-4">
                 <div className={cn(
                   "p-2 rounded-full shrink-0 h-fit",
                   !notification.isRead ? "bg-background shadow-sm" : "bg-muted/50"
