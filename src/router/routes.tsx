@@ -17,6 +17,7 @@ const Customers = lazy(() => import("@/app/management/customers/Customers"));
 const Products = lazy(() => import("@/app/management/products/Products"));
 const Promotions = lazy(() => import("@/app/management/promotions/Promotions"));
 const Branches = lazy(() => import("@/app/management/branches/Branches"));
+const Reports = lazy(() => import("@/app/management/reports/Reports"));
 const Notifications = lazy(() => import("@/app/notifications/Notifications"));
 
 // Auth
@@ -40,6 +41,7 @@ export const router = createBrowserRouter([
             { path: "management/products", element: <Products /> },
             { path: "management/promotions", element: <Promotions /> },
             { path: "management/branches", element: <Branches /> },
+            { path: "management/reports", element: <Reports /> },
             { path: "management/admins", element: <Admins /> },
             { path: "notifications", element: <Notifications /> },
             // Settings

@@ -35,11 +35,11 @@ const MANAGEMENT_ITEMS = [
   { name: "Menu / Products", icon: UtensilsCrossed, href: "/management/products" },
   { name: "Promotions", icon: Tag, href: "/management/promotions" },
   { name: "Branch Management", icon: Building2, href: "/management/branches" },
-  { name: "Reports & Analytics", icon: BarChart3, href: "/management/subscriptions" },
+  { name: "Reports & Analytics", icon: BarChart3, href: "/management/reports" },
 ];
 
 const SETTINGS_SUB_ITEMS = [
-  { name: "Make Admin", icon: UserRoundPen, href: "/settings/profile" },
+  { name: "Profile", icon: UserRoundPen, href: "/settings/profile" },
   { name: "Privacy Policy", icon: BadgeInfo, href: "/settings/privacy" },
   { name: "Terms", icon: ReceiptText, href: "/settings/terms" },
   { name: "FAQ", icon: MessageCircleQuestion, href: "/settings/faq" },
