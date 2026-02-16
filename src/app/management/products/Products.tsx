@@ -1,11 +1,21 @@
 import PageLayout from "@/components/common/page-layout";
 import { DataTable } from "@/components/ui/custom/data-table";
 import PageHeader from "@/components/ui/custom/page-header";
-import { productsColumns, type Product } from "@/components/management/products/products-columns";
+import {
+  productsColumns,
+  type Product,
+} from "@/components/management/products/products-columns";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { MapPin } from "lucide-react";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const products: Product[] = [
   {
@@ -87,10 +97,10 @@ const Products = () => {
       <div className="flex flex-col gap-6">
         {/* Header with Branch Selector */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <PageHeader
-              title="Menu / Products"
-              description="Manage your menu items and pricing"
-            />
+          <PageHeader
+            title="Menu / Products"
+            description="Manage your menu items and pricing"
+          />
           <div className="flex items-center gap-2 shrink-0">
             <Select defaultValue="main">
               <SelectTrigger>
@@ -111,69 +121,80 @@ const Products = () => {
         {/* Stats Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <Card className="p-4 bg-muted/50 border-none flex flex-col gap-2">
-            <p className="text-sm font-medium text-muted-foreground">Total Items</p>
+            <p className="text-sm font-medium text-muted-foreground">
+              Total Items
+            </p>
             <p className="text-3xl font-bold text-foreground">10</p>
           </Card>
           <Card className="p-4 bg-muted/50 border-none flex flex-col gap-2">
-            <p className="text-sm font-medium text-muted-foreground">Available</p>
+            <p className="text-sm font-medium text-muted-foreground">
+              Available
+            </p>
             <p className="text-3xl font-bold text-green-600">9</p>
           </Card>
           <Card className="p-4 bg-muted/50 border-none flex flex-col gap-2">
-            <p className="text-sm font-medium text-muted-foreground">Unavailable</p>
+            <p className="text-sm font-medium text-muted-foreground">
+              Unavailable
+            </p>
             <p className="text-3xl font-bold text-red-600">1</p>
           </Card>
           <Card className="p-4 bg-muted/50 border-none flex flex-col gap-2">
-            <p className="text-sm font-medium text-muted-foreground">Categories</p>
+            <p className="text-sm font-medium text-muted-foreground">
+              Categories
+            </p>
             <p className="text-3xl font-bold text-foreground">5</p>
           </Card>
         </div>
 
         {/* Category Tabs */}
         <div className="w-full overflow-x-auto pb-2">
-          <Tabs defaultValue="all" className="w-full">
-            <TabsList className="bg-transparent h-auto p-0 gap-2 flex-nowrap">
-              <TabsTrigger 
-                value="all" 
-                className="rounded-lg px-8 py-2.5 bg-primary text-primary-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
-              >
-                All Items
-              </TabsTrigger>
-              <TabsTrigger 
-                value="matcha" 
-                className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
-              >
-                Matcha
-              </TabsTrigger>
-              <TabsTrigger 
-                value="hot-coffee" 
-                className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
-              >
-                Hot Coffee
-              </TabsTrigger>
-              <TabsTrigger 
-                value="cold-coffee" 
-                className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
-              >
-                Cold Coffee
-              </TabsTrigger>
-              <TabsTrigger 
-                value="manual-brew" 
-                className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
-              >
-                Manual Brew
-              </TabsTrigger>
-              <TabsTrigger 
-                value="drinks" 
-                className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
-              >
-                Hot & Cold Drinks
-              </TabsTrigger>
-            </TabsList>
+          <Tabs defaultValue="all">
+            <ScrollArea className="w-87 sm:w-full">
+              <TabsList className="bg-transparent p-0 gap-2">
+                <TabsTrigger
+                  value="all"
+                  className="rounded-lg px-8 py-2.5 bg-primary text-primary-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
+                >
+                  All Items
+                </TabsTrigger>
+                <TabsTrigger
+                  value="matcha"
+                  className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
+                >
+                  Matcha
+                </TabsTrigger>
+                <TabsTrigger
+                  value="hot-coffee"
+                  className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
+                >
+                  Hot Coffee
+                </TabsTrigger>
+                <TabsTrigger
+                  value="cold-coffee"
+                  className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
+                >
+                  Cold Coffee
+                </TabsTrigger>
+                <TabsTrigger
+                  value="manual-brew"
+                  className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
+                >
+                  Manual Brew
+                </TabsTrigger>
+                <TabsTrigger
+                  value="drinks"
+                  className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
+                >
+                  Hot & Cold Drinks
+                </TabsTrigger>
+              </TabsList>
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
           </Tabs>
         </div>
 
         {/* Products Table */}
-          <DataTable columns={productsColumns} data={products} meta={meta} />
+        <DataTable columns={productsColumns} data={products} meta={meta} />
       </div>
     </PageLayout>
   );

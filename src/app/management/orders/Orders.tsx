@@ -6,7 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { User, ShoppingBag, CheckCircle2, XCircle, Timer } from "lucide-react";
-import { type Order, type OrderStatus } from "@/components/management/orders/orders-columns";
+import {
+  type Order,
+  type OrderStatus,
+} from "@/components/management/orders/orders-columns";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const ordersData: Order[] = [
   {
@@ -153,13 +157,16 @@ const Orders = () => {
           onValueChange={setActiveTab}
           className="w-full"
         >
-          <TabsList className="w-full">
-            {Object.entries(counts).map(([status, count]) => (
-              <TabsTrigger key={status} value={status}>
-                {status} ({count})
-              </TabsTrigger>
-            ))}
-          </TabsList>
+          <ScrollArea className="w-87 sm:w-full">
+            <TabsList>
+              {Object.entries(counts).map(([status, count]) => (
+                <TabsTrigger key={status} value={status}>
+                  {status} ({count})
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
         </Tabs>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
@@ -171,7 +178,9 @@ const Orders = () => {
                     <h3 className="text-lg font-bold text-foreground">
                       {order.orderNumber}
                     </h3>
-                    <p className="text-xs text-muted-foreground">{order.timeAgo}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {order.timeAgo}
+                    </p>
                   </div>
                   {getStatusBadge(order.status)}
                 </div>
@@ -216,7 +225,9 @@ const Orders = () => {
                   </p>
                 </div>
 
-                <div className="pt-2 mt-auto">{getActionButton(order.status)}</div>
+                <div className="pt-2 mt-auto">
+                  {getActionButton(order.status)}
+                </div>
               </CardContent>
             </Card>
           ))}
