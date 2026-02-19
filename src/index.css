@@ -149,19 +149,3 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-primary/40;
   }
-
-/* Notch Shape */
-.notch-shape {
-  clip-path: polygon(
-    0% 0%,
-    25% 100%,
-    75% 100%,
-    100% 0%
-  );
-  border-bottom-left-radius: 18px;
-  border-bottom-right-radius: 18px;
-}
-
-.font-crimson {
-  font-family: "Crimson Text", serif;
-}
