@@ -2,8 +2,7 @@
 import type { ColumnDef } from "@tanstack/react-table";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Eye } from "lucide-react";
+import { OrderViewModal } from "./order-view-modal";
 
 export type OrderStatus = "Pending" | "Preparing" | "Ready" | "Completed";
 
@@ -100,12 +99,10 @@ export const ordersColumns: ColumnDef<Order>[] = [
   },
   {
     id: "actions",
-    header: () => <div className="flex justify-end">Actions</div>,
-    cell: () => (
+    header: () => <div className="text-right">Actions</div>,
+    cell: ({ row }) => (
       <div className="flex justify-end">
-        <Button variant="outline" size="icon-sm">
-          <Eye/>
-        </Button>
+        <OrderViewModal order={row.original} />
       </div>
     ),
   },

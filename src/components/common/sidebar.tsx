@@ -22,6 +22,7 @@ import {
   Building2,
   BarChart3,
   ShieldCheck,
+  Percent,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
@@ -36,6 +37,7 @@ const MANAGEMENT_ITEMS = [
   { name: "Menu / Products", icon: UtensilsCrossed, href: "/management/products" },
   { name: "Promotions", icon: Tag, href: "/management/promotions" },
   { name: "Branch Management", icon: Building2, href: "/management/branches" },
+  { name: "Shop Fees", icon: Percent, href: "/management/shop-fees" },
   { name: "Reports & Analytics", icon: BarChart3, href: "/management/reports" },
   { name: "Admin Management", icon: ShieldCheck, href: "/management/admins" },
 ];

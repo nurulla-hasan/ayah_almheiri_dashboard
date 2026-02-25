@@ -111,59 +111,57 @@ const customersData: Customer[] = [
 const Customers = () => {
   return (
     <PageLayout>
-      <div className="space-y-6">
-        <div className="flex flex-col md:flex-row gap-2 justify-between">
-          <PageHeader
-            title="Customers"
-            description="Manage customer information and loyalty progress"
+      <div className="flex flex-col md:flex-row gap-2 justify-between">
+        <PageHeader
+          title="Customers"
+          description="Manage customer information and loyalty progress"
+        />
+
+        <div className="relative flex items-center">
+          <Search className="absolute left-4 size-4 text-muted-foreground/50" />
+          <Input
+            placeholder="Search customers by name or email..."
+            className="pl-11 w-full md:w-70 border-muted-foreground/20"
           />
-
-          <div className="relative flex items-center">
-            <Search className="absolute left-4 size-4 text-muted-foreground/50" />
-            <Input
-              placeholder="Search customers by name or email..."
-              className="pl-11 w-full md:w-70 border-muted-foreground/20"
-            />
-          </div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Card>
-            <CardContent>
-              <p className="text-sm font-medium text-muted-foreground">
-                Total Customers
-              </p>
-              <h3 className="text-3xl font-bold mt-1">220</h3>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent>
-              <p className="text-sm font-medium text-muted-foreground">
-                Active Customers
-              </p>
-              <h3 className="text-3xl font-bold mt-1">142</h3>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent>
-              <p className="text-sm font-medium text-muted-foreground">
-                Avg. Orders
-              </p>
-              <h3 className="text-3xl font-bold mt-1">22</h3>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent>
-              <p className="text-sm font-medium text-muted-foreground">
-                Loyalty Members
-              </p>
-              <h3 className="text-3xl font-bold mt-1">1,248</h3>
-            </CardContent>
-          </Card>
-        </div>
-
-        <DataTable columns={customersColumns} data={customersData} />
       </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <Card>
+          <CardContent>
+            <p className="text-sm font-medium text-muted-foreground">
+              Total Customers
+            </p>
+            <h3 className="text-3xl font-bold mt-1">220</h3>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent>
+            <p className="text-sm font-medium text-muted-foreground">
+              Active Customers
+            </p>
+            <h3 className="text-3xl font-bold mt-1">142</h3>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent>
+            <p className="text-sm font-medium text-muted-foreground">
+              Avg. Orders
+            </p>
+            <h3 className="text-3xl font-bold mt-1">22</h3>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent>
+            <p className="text-sm font-medium text-muted-foreground">
+              Loyalty Members
+            </p>
+            <h3 className="text-3xl font-bold mt-1">1,248</h3>
+          </CardContent>
+        </Card>
+      </div>
+
+      <DataTable columns={customersColumns} data={customersData} />
     </PageLayout>
   );
 };
