@@ -51,19 +51,19 @@ const WeeklyRevenueChart = () => {
                 <stop offset="100%" stopColor="#a855f7" stopOpacity={1} />
               </linearGradient>
             </defs>
-            <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="#f0f0f0" />
+            <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis
               dataKey="day"
               tickLine={false}
               axisLine={false}
               tickMargin={12}
-              tick={{ fill: '#888', fontSize: 12 }}
+              tick={{ fill: 'var(--muted-foreground)', fontSize: 12 }}
             />
             <YAxis
               tickLine={false}
               axisLine={false}
               tickMargin={12}
-              tick={{ fill: '#888', fontSize: 12 }}
+              tick={{ fill: 'var(--muted-foreground)', fontSize: 12 }}
               tickFormatter={(value) => `${value}`}
             />
             <ChartTooltip

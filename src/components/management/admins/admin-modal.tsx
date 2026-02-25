@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Plus } from "lucide-react";
 
 export type Admin = {
   id: string;
@@ -29,8 +30,9 @@ export const AdminModal = ({ mode, admin, trigger }: AdminModalProps) => {
       title={mode === "create" ? "Add New Admin" : "Edit Admin"}
       actionTrigger={
         trigger || (
-          <Button className="bg-primary/80 hover:bg-primary">
-            + Add New Admin
+          <Button>
+            <Plus />
+            Add Admin
           </Button>
         )
       }

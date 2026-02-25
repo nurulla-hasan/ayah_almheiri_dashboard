@@ -13,7 +13,7 @@ const MainLayout = () => {
             <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
             <div className="flex-1 flex flex-col relative lg:pl-64 h-screen overflow-hidden">
                 <Topbar onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)} />
-                <div className="flex-1 min-h-0 mt-20">
+                <div className="flex-1 min-h-0 mt-20 bg-background">
                     <ScrollArea
                         className="h-full p-4 lg:rounded-tl-2xl"
                         onClick={() => isSidebarOpen && setIsSidebarOpen(false)}>
@@ -23,7 +23,7 @@ const MainLayout = () => {
                     </ScrollArea>
                 </div>
             </div>
-            {isSidebarOpen && <div className="fixed inset-0 bg-black/50 z-30 lg:hidden" onClick={() => setIsSidebarOpen(false)}></div>}
+            {isSidebarOpen && <div className="fixed inset-0 bg-background/50 z-30 lg:hidden" onClick={() => setIsSidebarOpen(false)}></div>}
         </div>
     );
 };

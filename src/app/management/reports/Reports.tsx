@@ -188,8 +188,8 @@ const Reports = () => {
             title="Reports & Analytics"
             description="Track performance and business insights"
           />
-          <Button className="bg-primary/80 hover:bg-primary">
-            <Download className="h-4 w-4 mr-2" />
+          <Button>
+            <Download/>
             Export Report
           </Button>
         </div>
