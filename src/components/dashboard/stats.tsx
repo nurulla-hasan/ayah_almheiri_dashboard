@@ -14,7 +14,7 @@ const Stats = () => {
     },
     {
       label: "Revenue",
-      value: "5,240AED",
+      value: "AED 5,240",
       trend: "+8% from yesterday",
       icon: DollarSign,
       iconBg: "bg-green-50",

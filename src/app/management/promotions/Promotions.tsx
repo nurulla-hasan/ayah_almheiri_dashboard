@@ -72,7 +72,7 @@ const Promotions = () => {
   const totalPromotions = promotions.length;
   const activePromotions = promotions.filter(p => p.status === "Active").length;
   const totalUses = promotions.reduce((acc, p) => acc + p.uses, 0);
-  const revenueImpact = "8,450 AED"; // Keep this as static for now as it's a specific impact metric
+  const revenueImpact = "AED 8,450"; // Keep this as static for now as it's a specific impact metric
 
   return (
     <PageLayout>

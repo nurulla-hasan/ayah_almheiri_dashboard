@@ -23,7 +23,7 @@ const products: Product[] = [
     name: "Iced Matcha Latte",
     category: "Matcha",
     description: "Premium matcha with milk over ice",
-    price: "6.50AED",
+    price: "AED 6.50",
     availability: true,
   },
   {
@@ -31,7 +31,7 @@ const products: Product[] = [
     name: "Iced Matcha Latte",
     category: "Matcha",
     description: "Premium matcha with milk over ice",
-    price: "6.50AED",
+    price: "AED 6.50",
     availability: true,
   },
   {
@@ -39,7 +39,7 @@ const products: Product[] = [
     name: "Iced Matcha Latte",
     category: "Matcha",
     description: "Premium matcha with milk over ice",
-    price: "6.50AED",
+    price: "AED 6.50",
     availability: true,
   },
   {
@@ -47,7 +47,7 @@ const products: Product[] = [
     name: "Iced Matcha Latte",
     category: "Matcha",
     description: "Premium matcha with milk over ice",
-    price: "6.50AED",
+    price: "AED 6.50",
     availability: true,
   },
   {
@@ -55,7 +55,7 @@ const products: Product[] = [
     name: "Iced Matcha Latte",
     category: "Matcha",
     description: "Premium matcha with milk over ice",
-    price: "6.50AED",
+    price: "AED 6.50",
     availability: false,
   },
   {
@@ -63,7 +63,7 @@ const products: Product[] = [
     name: "Iced Matcha Latte",
     category: "Matcha",
     description: "Premium matcha with milk over ice",
-    price: "6.50AED",
+    price: "AED 6.50",
     availability: true,
   },
   {
@@ -71,7 +71,7 @@ const products: Product[] = [
     name: "Iced Matcha Latte",
     category: "Matcha",
     description: "Premium matcha with milk over ice",
-    price: "6.50AED",
+    price: "AED 6.50",
     availability: true,
   },
   {
@@ -79,7 +79,7 @@ const products: Product[] = [
     name: "Iced Matcha Latte",
     category: "Matcha",
     description: "Premium matcha with milk over ice",
-    price: "6.50AED",
+    price: "AED 6.50",
     availability: true,
   },
 ];

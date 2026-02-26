@@ -18,7 +18,7 @@ const branches: Branch[] = [
     workingHours: "8:00 AM - 10:00 PM",
     status: "Active",
     todayOrders: 87,
-    todayRevenue: "2340.50AED",
+    todayRevenue: "AED 2340.50",
   },
   {
     id: "2",
@@ -30,7 +30,7 @@ const branches: Branch[] = [
     workingHours: "9:00 AM - 9:00 PM",
     status: "Active",
     todayOrders: 64,
-    todayRevenue: "1825.00AED",
+    todayRevenue: "AED 1825.00",
   },
   {
     id: "3",
@@ -42,7 +42,7 @@ const branches: Branch[] = [
     workingHours: "8:00 AM - 10:00 PM",
     status: "Active",
     todayOrders: 52,
-    todayRevenue: "1456.75AED",
+    todayRevenue: "AED 1456.75",
   },
   {
     id: "4",
@@ -54,7 +54,7 @@ const branches: Branch[] = [
     workingHours: "Closed for Renovation",
     status: "Temporarily Closed",
     todayOrders: 0,
-    todayRevenue: "0.00AED",
+    todayRevenue: "AED 0.00",
   },
 ];
 
@@ -100,7 +100,7 @@ const Branches = () => {
             <CardContent>
               <div className="flex flex-col gap-1">
                 <p className="text-sm font-medium text-muted-foreground">Today's Revenue</p>
-                <p className="text-3xl font-bold text-green-600">5622.25AED</p>
+                <p className="text-3xl font-bold text-green-600">AED 5622.25</p>
               </div>
             </CardContent>
           </Card>

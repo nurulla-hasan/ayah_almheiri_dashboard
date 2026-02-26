@@ -45,7 +45,7 @@ const recentOrders: Order[] = [
     deliveryType: "Car Pickup",
     deliveryDetails: "ABC-123",
     items: ["Burger Combo", "Fries", "Coke"],
-    totalAmount: "24.50AED",
+    totalAmount: "AED 24.50",
     status: "Preparing",
   },
   {
@@ -56,7 +56,7 @@ const recentOrders: Order[] = [
     deliveryType: "Counter Pickup",
     deliveryDetails: "",
     items: ["Pizza Large", "Coke"],
-    totalAmount: "32.00AED",
+    totalAmount: "AED 32.00",
     status: "Ready",
   },
   {
@@ -67,7 +67,7 @@ const recentOrders: Order[] = [
     deliveryType: "Car Pickup",
     deliveryDetails: "XYZ-789",
     items: ["Salad Bowl"],
-    totalAmount: "12.50AED",
+    totalAmount: "AED 12.50",
     status: "Pending",
   },
   {
@@ -78,7 +78,7 @@ const recentOrders: Order[] = [
     deliveryType: "Counter Pickup",
     deliveryDetails: "",
     items: ["Pasta", "Garlic Bread"],
-    totalAmount: "28.00AED",
+    totalAmount: "AED 28.00",
     status: "Preparing",
   },
   {
@@ -89,7 +89,7 @@ const recentOrders: Order[] = [
     deliveryType: "Car Pickup",
     deliveryDetails: "DEF-456",
     items: ["Steak Dinner", "Wine"],
-    totalAmount: "45.00AED",
+    totalAmount: "AED 45.00",
     status: "Completed",
   },
 ];

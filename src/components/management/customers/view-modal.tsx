@@ -15,9 +15,9 @@ const CustomerViewModal = ({ customer }: CustomerViewModalProps) => {
   const [open, setOpen] = useState(false);
 
   const recentOrders = [
-    { id: "ORD-1234", item: "Hot Coffee", price: "24.50AED" },
-    { id: "ORD-1198", item: "Cold Coffee", price: "32.00AED" },
-    { id: "ORD-1145", item: "Hot & Cold Drink", price: "28.00AED" },
+    { id: "ORD-1234", item: "Hot Coffee", price: "AED 24.50" },
+    { id: "ORD-1198", item: "Cold Coffee", price: "AED 32.00" },
+    { id: "ORD-1145", item: "Hot & Cold Drink", price: "AED 28.00" },
   ];
 
   return (

@@ -93,35 +93,35 @@ const topProducts: TopProduct[] = [
     rank: 1,
     name: "Classic Burger",
     unitsSold: 245,
-    revenue: "3062.50AED",
+    revenue: "AED 3062.50",
     performance: 98,
   },
   {
     rank: 2,
     name: "Margherita Pizza",
     unitsSold: 189,
-    revenue: "3402.00AED",
+    revenue: "AED 3402.00",
     performance: 76,
   },
   {
     rank: 3,
     name: "Pepperoni Pizza",
     unitsSold: 156,
-    revenue: "3120.00AED",
+    revenue: "AED 3120.00",
     performance: 62,
   },
   {
     rank: 4,
     name: "Spaghetti Carbonara",
     unitsSold: 142,
-    revenue: "2272.00AED",
+    revenue: "AED 2272.00",
     performance: 57,
   },
   {
     rank: 5,
     name: "Caesar Salad",
     unitsSold: 98,
-    revenue: "1029.00AED",
+    revenue: "AED 1029.00",
     performance: 39,
   },
 ];
@@ -203,7 +203,7 @@ const Reports = () => {
                   <p className="text-sm font-medium text-muted-foreground">
                     Total Revenue
                   </p>
-                  <p className="text-2xl font-bold">15,700AED</p>
+                  <p className="text-2xl font-bold">AED 15,700</p>
                   <div className="flex items-center gap-1 text-xs text-green-600 font-medium">
                     <TrendingUp className="h-3 w-3" />
                     <span>+12.5% vs last week</span>
@@ -243,7 +243,7 @@ const Reports = () => {
                   <p className="text-sm font-medium text-muted-foreground">
                     Avg Order Value
                   </p>
-                  <p className="text-2xl font-bold">29.35AED</p>
+                  <p className="text-2xl font-bold">AED 29.35</p>
                   <div className="flex items-center gap-1 text-xs text-green-600 font-medium">
                     <TrendingUp className="h-3 w-3" />
                     <span>+3.7% vs last week</span>

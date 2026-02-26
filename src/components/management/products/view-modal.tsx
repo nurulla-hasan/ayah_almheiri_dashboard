@@ -91,11 +91,11 @@ export const ProductViewModal = ({ product }: ProductViewModalProps) => {
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Tax (5%)</span>
-                  <span className="font-medium">0.32 AED</span>
+                  <span className="font-medium">AED 0.32</span>
                 </div>
                 <div className="border-t pt-2 flex justify-between text-sm font-bold">
                   <span>Total</span>
-                  <span className="text-primary">6.82 AED</span>
+                  <span className="text-primary">AED 6.82</span>
                 </div>
               </div>
             </div>
