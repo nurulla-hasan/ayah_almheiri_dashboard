@@ -1,14 +1,17 @@
 
 import { type ColumnDef } from "@tanstack/react-table";
-// import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 
 export interface ShopFee {
   id: string;
   name: string;
+  ownerName: string;
+  category: string;
   location: string;
-  isFeeActive: boolean;
-  feePercentage: number | string;
   status: "Active" | "Inactive";
+  joinedDate: string;
+  feePercentage: number;
+  isFeeActive: boolean;
 }
 
 interface ShopFeeColumnsProps {
@@ -21,41 +24,52 @@ export const getShopFeeColumns = ({
   {
     accessorKey: "name",
     header: "SHOP NAME",
-    cell: ({ row }) => <span className="font-medium">{row.getValue("name")}</span>,
+    cell: ({ row }) => (
+      <div className="flex flex-col gap-0.5">
+        <span className="font-bold text-foreground line-clamp-1">
+          {row.original.name}
+        </span>
+        <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
+          {row.original.category}
+        </span>
+      </div>
+    ),
   },
   {
-    accessorKey: "location",
-    header: "LOCATION",
-    cell: ({ row }) => <span>{row.getValue("location")}</span>,
+    accessorKey: "ownerName",
+    header: "OWNER",
+    cell: ({ row }) => (
+      <span className="text-sm font-medium text-muted-foreground">
+        {row.original.ownerName}
+      </span>
+    ),
   },
-  // {
-  //   accessorKey: "status",
-  //   header: "STATUS",
-  //   cell: ({ row }) => (
-  //     <Badge variant={row.getValue("status") === "Active" ? "success" : "secondary"}>
-  //       {row.getValue("status")}
-  //     </Badge>
-  //   ),
-  // },
-  // {
-  //   accessorKey: "isFeeActive",
-  //   header: "FEE APPLICABLE",
-  //   cell: ({ row }) => (
-  //     <div className="flex items-center gap-2">
-  //       <Badge variant={row.getValue("isFeeActive") ? "default" : "secondary"} className="rounded-md px-3">
-  //         {row.getValue("isFeeActive") ? "Yes" : "No"}
-  //       </Badge>
-  //     </div>
-  //   ),
-  // },
+  {
+    accessorKey: "status",
+    header: "STATUS",
+    cell: ({ row }) => {
+      const status = row.original.status;
+      return (
+        <Badge variant={status === "Active" ? "success" : "muted"} className="font-bold">
+          {status}
+        </Badge>
+      );
+    },
+  },
   {
     id: "appliedFee",
     header: "APPLIED FEE",
     cell: ({ row }) => (
-      <div className="flex items-center gap-1 font-medium">
-        <span className={row.original.isFeeActive ? "text-primary" : "text-muted-foreground/50"}>
-          {row.original.isFeeActive ? `${globalFee}%` : "0%"}
-        </span>
+      <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 bg-primary/5 px-2 py-1 rounded-md border border-primary/10">
+          <span
+            className={`text-sm font-bold ${
+              row.original.isFeeActive ? "text-primary" : "text-muted-foreground/40"
+            }`}
+          >
+            {row.original.isFeeActive ? `${globalFee}%` : "0%"}
+          </span>
+        </div>
       </div>
     ),
   },
