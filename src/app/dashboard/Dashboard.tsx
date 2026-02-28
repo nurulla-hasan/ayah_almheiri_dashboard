@@ -46,6 +46,7 @@ const recentOrders: Order[] = [
     deliveryDetails: "ABC-123",
     items: ["Burger Combo", "Fries", "Coke"],
     totalAmount: "AED 24.50",
+    date: "2026-02-28",
     status: "Preparing",
   },
   {
@@ -57,6 +58,7 @@ const recentOrders: Order[] = [
     deliveryDetails: "",
     items: ["Pizza Large", "Coke"],
     totalAmount: "AED 32.00",
+    date: "2026-02-28",
     status: "Ready",
   },
   {
@@ -68,6 +70,7 @@ const recentOrders: Order[] = [
     deliveryDetails: "XYZ-789",
     items: ["Salad Bowl"],
     totalAmount: "AED 12.50",
+    date: "2026-02-28",
     status: "Pending",
   },
   {
@@ -79,6 +82,7 @@ const recentOrders: Order[] = [
     deliveryDetails: "",
     items: ["Pasta", "Garlic Bread"],
     totalAmount: "AED 28.00",
+    date: "2026-02-28",
     status: "Preparing",
   },
   {
@@ -90,6 +94,7 @@ const recentOrders: Order[] = [
     deliveryDetails: "DEF-456",
     items: ["Steak Dinner", "Wine"],
     totalAmount: "AED 45.00",
+    date: "2026-02-28",
     status: "Completed",
   },
 ];

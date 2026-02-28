@@ -1,6 +1,6 @@
 
 import { type ColumnDef } from "@tanstack/react-table";
-import { Badge } from "@/components/ui/badge";
+// import { Badge } from "@/components/ui/badge";
 
 export interface ShopFee {
   id: string;
@@ -28,26 +28,26 @@ export const getShopFeeColumns = ({
     header: "LOCATION",
     cell: ({ row }) => <span>{row.getValue("location")}</span>,
   },
-  {
-    accessorKey: "status",
-    header: "STATUS",
-    cell: ({ row }) => (
-      <Badge variant={row.getValue("status") === "Active" ? "success" : "secondary"}>
-        {row.getValue("status")}
-      </Badge>
-    ),
-  },
-  {
-    accessorKey: "isFeeActive",
-    header: "FEE APPLICABLE",
-    cell: ({ row }) => (
-      <div className="flex items-center gap-2">
-        <Badge variant={row.getValue("isFeeActive") ? "default" : "secondary"} className="rounded-md px-3">
-          {row.getValue("isFeeActive") ? "Yes" : "No"}
-        </Badge>
-      </div>
-    ),
-  },
+  // {
+  //   accessorKey: "status",
+  //   header: "STATUS",
+  //   cell: ({ row }) => (
+  //     <Badge variant={row.getValue("status") === "Active" ? "success" : "secondary"}>
+  //       {row.getValue("status")}
+  //     </Badge>
+  //   ),
+  // },
+  // {
+  //   accessorKey: "isFeeActive",
+  //   header: "FEE APPLICABLE",
+  //   cell: ({ row }) => (
+  //     <div className="flex items-center gap-2">
+  //       <Badge variant={row.getValue("isFeeActive") ? "default" : "secondary"} className="rounded-md px-3">
+  //         {row.getValue("isFeeActive") ? "Yes" : "No"}
+  //       </Badge>
+  //     </div>
+  //   ),
+  // },
   {
     id: "appliedFee",
     header: "APPLIED FEE",
