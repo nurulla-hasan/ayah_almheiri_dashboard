@@ -147,43 +147,37 @@ const Products = () => {
         </div>
 
         {/* Category Tabs */}
-        <div className="w-full overflow-x-auto pb-2">
+        <div className="w-full overflow-x-auto">
           <Tabs defaultValue="all">
             <ScrollArea className="w-87 sm:w-full">
-              <TabsList className="bg-transparent p-0 gap-2">
+              <TabsList>
                 <TabsTrigger
                   value="all"
-                  className="rounded-lg px-8 py-2.5 bg-primary text-primary-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
                 >
                   All Items
                 </TabsTrigger>
                 <TabsTrigger
                   value="matcha"
-                  className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
                 >
                   Matcha
                 </TabsTrigger>
                 <TabsTrigger
                   value="hot-coffee"
-                  className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
                 >
                   Hot Coffee
                 </TabsTrigger>
                 <TabsTrigger
                   value="cold-coffee"
-                  className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
                 >
                   Cold Coffee
                 </TabsTrigger>
                 <TabsTrigger
                   value="manual-brew"
-                  className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
                 >
                   Manual Brew
                 </TabsTrigger>
                 <TabsTrigger
                   value="drinks"
-                  className="rounded-lg px-8 py-2.5 bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shadow-sm border-none"
                 >
                   Hot & Cold Drinks
                 </TabsTrigger>
