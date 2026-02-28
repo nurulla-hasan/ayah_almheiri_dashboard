@@ -1,6 +1,6 @@
 import { type ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
-import { Switch } from "@/components/ui/switch";
+// import { Switch } from "@/components/ui/switch";
 import { Upload } from "lucide-react";
 import { ProductViewModal } from "./view-modal";
 
@@ -58,18 +58,18 @@ export const productsColumns: ColumnDef<Product>[] = [
       </span>
     ),
   },
-  {
-    accessorKey: "availability",
-    header: "AVAILABILITY",
-    cell: ({ row }) => (
-      <div className="flex items-center gap-2">
-        <Switch checked={row.getValue("availability")} />
-        <span className={`text-sm font-medium ${row.getValue("availability") ? "text-green-600" : "text-red-600"}`}>
-          {row.getValue("availability") ? "Available" : "Unavailable"}
-        </span>
-      </div>
-    ),
-  },
+  // {
+  //   accessorKey: "availability",
+  //   header: "AVAILABILITY",
+  //   cell: ({ row }) => (
+  //     <div className="flex items-center gap-2">
+  //       <Switch checked={row.getValue("availability")} />
+  //       <span className={`text-sm font-medium ${row.getValue("availability") ? "text-green-600" : "text-red-600"}`}>
+  //         {row.getValue("availability") ? "Available" : "Unavailable"}
+  //       </span>
+  //     </div>
+  //   ),
+  // },
   {
     id: "actions",
     header: () => <div className="text-right mr-5">VIEW</div>,
