@@ -50,17 +50,32 @@ export function OrderViewModal({ order, trigger }: OrderViewModalProps) {
       <ScrollArea className="h-[50vh] whitespace-nowrap">
         <div className="p-6 space-y-6">
           {/* Status Badge */}
-          <div className="flex justify-between items-center">
-            <span className="text-sm text-muted-foreground font-medium">
-              Order Status
-            </span>
-            <Badge
-              variant={getStatusVariant(order.status) as any}
-              className="text-sm px-3 py-1"
-            >
-              {order.status}
-            </Badge>
-          </div>
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-muted-foreground font-medium">
+                Order Status
+              </span>
+              <Badge
+                variant={getStatusVariant(order.status) as any}
+                className="text-sm px-3 py-1"
+              >
+                {order.status}
+              </Badge>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 bg-muted/30 p-4 rounded-lg border">
+              <div className="space-y-1">
+                <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">
+                  Order Date
+                </span>
+                <p className="text-sm font-medium">{order.date}</p>
+              </div>
+              <div className="space-y-1">
+                <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">
+                  Time
+                </span>
+                <p className="text-sm font-medium">{order.timeAgo}</p>
+              </div>
+            </div>
 
           <Separator />
 

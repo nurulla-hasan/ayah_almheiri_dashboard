@@ -15,6 +15,7 @@ export type Order = {
   deliveryDetails: string;
   items: string[];
   totalAmount: string;
+  date: string;
   status: OrderStatus;
 };
 
@@ -25,6 +26,15 @@ export const ordersColumns: ColumnDef<Order>[] = [
     cell: ({ row }) => (
       <span className="text-sm font-medium text-foreground">
         {row.original.orderNumber}
+      </span>
+    ),
+  },
+  {
+    accessorKey: "date",
+    header: "Date",
+    cell: ({ row }) => (
+      <span className="text-sm text-muted-foreground whitespace-nowrap">
+        {row.original.date}
       </span>
     ),
   },

@@ -126,7 +126,7 @@ const Customers = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <Card>
           <CardContent>
             <p className="text-sm font-medium text-muted-foreground">
@@ -151,14 +151,14 @@ const Customers = () => {
             <h3 className="text-3xl font-bold mt-1">22</h3>
           </CardContent>
         </Card>
-        <Card>
+        {/* <Card>
           <CardContent>
             <p className="text-sm font-medium text-muted-foreground">
               Loyalty Members
             </p>
             <h3 className="text-3xl font-bold mt-1">1,248</h3>
           </CardContent>
-        </Card>
+        </Card> */}
       </div>
 
       <DataTable columns={customersColumns} data={customersData} />
