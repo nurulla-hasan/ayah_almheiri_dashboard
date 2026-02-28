@@ -17,6 +17,7 @@ const Customers = lazy(() => import("@/app/management/customers/Customers"));
 const Products = lazy(() => import("@/app/management/products/Products"));
 const Promotions = lazy(() => import("@/app/management/promotions/Promotions"));
 const Branches = lazy(() => import("@/app/management/branches/Branches"));
+const ShopOwners = lazy(() => import("@/app/management/shop-owners/ShopOwners"));
 const ShopFees = lazy(() => import("@/app/management/shop-fees/ShopFees"));
 const Reports = lazy(() => import("@/app/management/reports/Reports"));
 const Notifications = lazy(() => import("@/app/notifications/Notifications"));
@@ -42,6 +43,7 @@ export const router = createBrowserRouter([
             { path: "management/products", element: <Products /> },
             { path: "management/promotions", element: <Promotions /> },
             { path: "management/branches", element: <Branches /> },
+            { path: "management/shop-owners", element: <ShopOwners /> },
             { path: "management/shop-fees", element: <ShopFees /> },
             { path: "management/reports", element: <Reports /> },
             { path: "management/admins", element: <Admins /> },

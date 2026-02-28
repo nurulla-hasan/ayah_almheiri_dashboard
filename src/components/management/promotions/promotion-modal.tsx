@@ -3,7 +3,7 @@ import { ModalWrapper } from "@/components/ui/custom/modal-wrapper";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Percent } from "lucide-react";
 import { type Promotion } from "./promotions-columns";
 import { DatePickerWithRange } from "@/components/ui/date-range-picker";
 import { type DateRange } from "react-day-picker";
@@ -48,27 +48,19 @@ export const PromotionModal = ({ mode, promotion, trigger }: PromotionModalProps
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="type" className="font-medium text-muted-foreground">Discount Type</Label>
-              <Select defaultValue={promotion?.type || "Percentage"}>
-                <SelectTrigger id="type">
-                  <SelectValue placeholder="Select type" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="Percentage">Percentage</SelectItem>
-                  <SelectItem value="Fixed Amount">Fixed Amount</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="value" className="font-medium text-muted-foreground">Discount Value</Label>
+          <div className="flex flex-col gap-2">
+            <Label htmlFor="value" className="font-medium text-muted-foreground uppercase tracking-tight text-xs">Shop Percentage</Label>
+            <div className="relative">
               <Input 
                 id="value" 
-                type="text" 
+                type="number" 
                 placeholder="0" 
                 defaultValue={promotion?.value.replace(/[^0-9.]/g, '')}
+                className="pr-10"
               />
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none">
+                <Percent className="h-4 w-4" />
+              </div>
             </div>
           </div>
 

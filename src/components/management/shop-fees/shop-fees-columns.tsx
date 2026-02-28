@@ -1,8 +1,6 @@
 
 import { type ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
-import { Switch } from "@/components/ui/switch";
-import { Input } from "@/components/ui/input";
 
 export interface ShopFee {
   id: string;
@@ -14,13 +12,11 @@ export interface ShopFee {
 }
 
 interface ShopFeeColumnsProps {
-  onFeeToggle: (id: string, checked: boolean) => void;
-  onFeeChange: (id: string, value: string) => void;
+  globalFee: number;
 }
 
 export const getShopFeeColumns = ({
-  onFeeToggle,
-  onFeeChange,
+  globalFee,
 }: ShopFeeColumnsProps): ColumnDef<ShopFee>[] => [
   {
     accessorKey: "name",
@@ -43,34 +39,23 @@ export const getShopFeeColumns = ({
   },
   {
     accessorKey: "isFeeActive",
-    header: "FEE ACTIVE",
+    header: "FEE APPLICABLE",
     cell: ({ row }) => (
       <div className="flex items-center gap-2">
-        <Switch
-          checked={row.getValue("isFeeActive")}
-          onCheckedChange={(checked) => onFeeToggle(row.original.id, checked)}
-        />
-        <span className="text-sm text-muted-foreground">
-          {row.getValue("isFeeActive") ? "On" : "Off"}
-        </span>
+        <Badge variant={row.getValue("isFeeActive") ? "default" : "secondary"} className="rounded-md px-3">
+          {row.getValue("isFeeActive") ? "Yes" : "No"}
+        </Badge>
       </div>
     ),
   },
   {
-    accessorKey: "feePercentage",
-    header: "FEE PERCENTAGE (%)",
+    id: "appliedFee",
+    header: "APPLIED FEE",
     cell: ({ row }) => (
-      <div className="flex items-center gap-2">
-        <Input
-          type="number"
-          value={row.getValue("feePercentage")}
-          onChange={(e) => onFeeChange(row.original.id, e.target.value)}
-          disabled={!row.original.isFeeActive}
-          className="w-24"
-          min={0}
-          max={100}
-        />
-        <span className="text-sm text-muted-foreground">%</span>
+      <div className="flex items-center gap-1 font-medium">
+        <span className={row.original.isFeeActive ? "text-primary" : "text-muted-foreground/50"}>
+          {row.original.isFeeActive ? `${globalFee}%` : "0%"}
+        </span>
       </div>
     ),
   },
