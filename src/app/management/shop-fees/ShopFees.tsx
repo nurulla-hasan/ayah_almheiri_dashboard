@@ -21,6 +21,7 @@ const INITIAL_DATA: ShopFee[] = [
     joinedDate: "2024-03-10",
     feePercentage: 10,
     isFeeActive: true,
+    useGlobalFee: true,
   },
   {
     id: "2",
@@ -30,8 +31,9 @@ const INITIAL_DATA: ShopFee[] = [
     location: "North District",
     status: "Active",
     joinedDate: "2024-02-15",
-    feePercentage: 10,
+    feePercentage: 8,
     isFeeActive: true,
+    useGlobalFee: false,
   },
   {
     id: "3",
@@ -43,6 +45,7 @@ const INITIAL_DATA: ShopFee[] = [
     joinedDate: "2024-02-28",
     feePercentage: 12,
     isFeeActive: true,
+    useGlobalFee: false,
   },
   {
     id: "4",
@@ -54,6 +57,7 @@ const INITIAL_DATA: ShopFee[] = [
     joinedDate: "2024-03-12",
     feePercentage: 8,
     isFeeActive: false,
+    useGlobalFee: true,
   },
   {
     id: "5",
@@ -65,6 +69,7 @@ const INITIAL_DATA: ShopFee[] = [
     joinedDate: "2024-01-20",
     feePercentage: 10,
     isFeeActive: true,
+    useGlobalFee: true,
   },
 ];
 
@@ -133,7 +138,7 @@ const ShopFees = () => {
                 </div>
 
                 {/* Service Fee */}
-                <div className="flex flex-col gap-3 p-4 bg-muted/30 rounded-xl border border-border/50">
+                {/* <div className="flex flex-col gap-3 p-4 bg-muted/30 rounded-xl border border-border/50">
                   <div className="flex flex-col gap-1">
                     <span className="text-[10px] font-extrabold uppercase tracking-widest text-primary/80">Maintenance</span>
                     <span className="text-sm font-semibold text-foreground">Service Fee</span>
@@ -151,7 +156,7 @@ const ShopFees = () => {
                       <Save className="h-4 w-4" />
                     </Button>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
